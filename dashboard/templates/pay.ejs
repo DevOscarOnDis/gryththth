@@ -1,0 +1,234 @@
+<%- include('partial/head.ejs'); -%>
+<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa&display=swap" rel="stylesheet"></link>
+<div class="main">
+    <div class="content active">
+        <div class="top-navbar">
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <img src="https://media.discordapp.net/attachments/1006216874683535440/1022137233089761290/PicsArt_09-06-08.48.34.png?width=664&height=664" alt="" width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd" class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+            <div class="profile">
+                <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" alt="">
+            </div>
+        </div>
+        <form action="/premium" method="post" id="product_contanner">
+            <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="card text-center">
+                <div class="title">
+                  <i class="fa fa-paper-plane" arova-hidden="true"></i>
+                  <h2>Basic</h2>
+                </div>
+                <div class="price">
+                  <h4><sup>$</sup>3</h4>
+                </div>
+                <div class="option">
+                  <ul>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i>  تخفيض 25% على كل منتجات  </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> شراء دولار واحد ب 4 الف بدلا من 7500 كريدت  </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i>  منتجات مجانية كل فترة  </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> دعم فني 24/24 </li>
+                    <li> <i class="fa fa-check" arova-hidden="true"></i> رتبة VIP في سيرفر rova</li>
+                  </ul>
+                </div>
+                <button class="sfd" type="submit" value="3" name="name">Order Now </button>
+              </div>
+            </div>
+            <!-- END Col one -->
+            <div class="col-sm-4">
+              <div class="card text-center">
+                <div class="title">
+                  <i class="fa fa-plane" arova-hidden="true"></i>
+                  <h2>Standard</h2>
+                </div>
+                <div class="price">
+                  <h4><sup>$</sup>5</h4>
+                </div>
+                <div class="option">
+                  <ul>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> تخفيض 50% على كل منتجات </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> شراء دولار واحد ب 2 الف بدلا من 7500 كريدت </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> منتجات مجانية كل فترة  </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> دعم فني 24/24 </li>
+                    <li> <i class="fa fa-check" arova-hidden="true"></i> رتبة VIP في سيرفر rova </li>
+                  </ul>
+                </div>
+                <button href="#" class="sfd" type="submit" value="5" name="name">Order Now </button>
+              </div>
+            </div>
+            <!-- END Col two -->
+            <div class="col-sm-4">
+              <div class="card text-center">
+                <div class="title">
+                  <i class="fa fa-rocket" arova-hidden="true"></i>
+                  <h2>Premium</h2>
+                </div>
+                <div class="price">
+                  <h4><sup>$</sup>9</h4>
+                </div>
+                <div class="option">
+                  <ul>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i>  تخفيض 90% على كل منتجات </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> شراء دولار واحد ب 1 الف بدلا من 7500 كريدت  </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i> منتجات مجانية كل فترة  </li>
+                  <li> <i class="fa fa-check" arova-hidden="true"></i>رتبة VIP في سيرفر rova </li>
+                    <li> <i class="fa fa-check" arova-hidden="true"></i> خيار استرجاع الكريدت  </li>
+                    <li> <i class="fa fa-check" arova-hidden="true"></i> تستطيع اعادة المنتج في حال عدم قبول </li>
+                    <li> <i class="fa fa-check" arova-hidden="true"></i> هدية دولارات كل أسبوع </li>
+                  </ul>
+                </div>
+                <button href="#" class="sfd" value="9" name="name">Order Now </button>
+              </div>
+            </div>
+            <!-- END Col three -->
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
+        </form>
+    </div>
+    </div>
+</div>
+<style>
+    /* by Jamal Hassouni*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+body{
+  margin: 0;
+  padding: 0;
+ font-family: 'Roboto', sans-serif !important;
+}
+section{
+  width: 100%;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 140px 0;
+}
+.card{
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  background: linear-gradient(-45deg,#fe0847,#feae3f);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  -webkit-box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+-webkit-transition: .5s;
+transition: .5s;
+}
+.card:hover{
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.col-sm-4:nth-child(1) .card ,
+.col-sm-4:nth-child(1) .card .title .fa{
+  background: linear-gradient(-45deg,#f403d1,#64b5f6);
+
+}
+.col-sm-4:nth-child(2) .card,
+.col-sm-4:nth-child(2) .card .title .fa{
+  background: linear-gradient(-45deg,#ffec61,#f321d7);
+
+}
+.col-sm-4:nth-child(3) .card,
+.col-sm-4:nth-child(3) .card .title .fa{
+  background: linear-gradient(-45deg,#24ff72,#9a4eff);
+
+}
+.card::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(255, 255, 255, .1);
+z-index: 1;
+-webkit-transform: skewY(-5deg) scale(1.5);
+        transform: skewY(-5deg) scale(1.5);
+}
+.title .fa{
+  color:#fff;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  border-radius:  50%;
+  text-align: center;
+  line-height: 100px;
+  -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+
+}
+.title h2 {
+  position: relative;
+  margin: 20px  0 0;
+  padding: 0;
+  color: #fff;
+  font-size: 28px;
+ z-index: 2;
+}
+.price,.option{
+  position: relative;
+  z-index: 2;
+}
+.price h4 {
+margin: 0;
+padding: 20px 0 ;
+color: #fff;
+font-size: 60px;
+}
+.option ul {
+  margin: 0;
+  padding: 0;
+
+}
+.option ul li {
+margin: 0 0 10px;
+padding: 0;
+list-style: none;
+color: black;
+font-size: 16px;
+}
+.card .sfd {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  color : black;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 40px;
+  display: block;
+  text-align: center;
+  margin: 20px auto 0 ;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+
+}
+.card .sfd:hover{
+    text-decoration: none;
+}
+body {
+    background-image: linear-gradient(#478ac9, #ed5497);
+}
+.disabledd {
+  display: none;
+}
+</style>

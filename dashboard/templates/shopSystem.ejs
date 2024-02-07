@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <meta name="description" content="rova store for shoping">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Shops
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include("partial/head.ejs") %>
+            <div class="content">
+                <div class="top-navbar">
+                    <div class="bx bx-menu ghost" id="menu-icon"></div>
+                    <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+                        class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+                    <% if(user) { %>
+                        <div class="profile">
+                            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png"
+                                class="user-photo">
+                        </div>
+                        <% }else{ %>
+                            <div class="profile">
+                                <button onclick="window.location.href='/login'" class="btn">Login</button>
+                            </div>
+                            <%}%>
+                </div>
+
+                <div class="system">
+                    <h1>Shop System</h1>
+                    <div class="table">
+
+                        <% if (products.length > 0) { %>
+
+                        <% products.forEach(element => { %>
+                            
+                       
+
+                        <div class="card">
+                            <div class="imgh">
+                                <img src="<%= element.img  %>" alt="404">
+                            </div>
+                            <div class="information">
+                                <span class="full"><span class="spical">Product Name : </span><%= element.name %></span>
+                                <span class="full"><span class="spical">Product ID : </span><%= element.id %></span>
+                                <span class="full"><span class="spical">Product Price : </span><%= element.price %>$</span>
+                                <span class="full"><span class="spical">كلمة منتج : </span><%= element.productEmail %></span>
+                            </div>
+                            <div class="conto">
+                                <form action="" method="post">
+                                    <input type="hidden" name="shopID" value="<%= element.ShopID %>">
+                                    <input type="hidden" name="productID" value="<%= element.id %>">
+                                    <button type="submit" name="show" value="h">Show Product</button>
+                                    <button type="submit" class="k" name="del" value="h1">Reject Product</button>
+
+                                </form>
+                            </div>
+                        </div>
+
+
+
+                        <% }); %>
+                        <% } else { %>
+                            <div class="empty"><span>No Products, To Reject Or Accept</span></div>
+                        <% } %>
+
+
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    <%- include("partials/footer") %>
+        <style>
+        </style>
+</body>
+
+</html>

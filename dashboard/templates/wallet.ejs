@@ -1,0 +1,65 @@
+<% if(alert && alert.type == "success"){ %>
+    <div class="alert alert-success"> <%= alert.message %> </div>
+<% }else if(alert && alert.type == "danger"){ %>
+    <div class="alert alert-danger"> <%= alert.message %> </div>
+<% } %>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Transfer
+  </title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <button class="up" id="up">UP</button>
+
+  <div class="main">
+    <%- include('partial/head.ejs'); -%>
+    <div class="content active">
+      <div class="top-navbar">
+        <div class="bx bx-menu ghost" id="menu-icon"></div>
+        <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+          class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+        <% if(user) { %>
+          <div class="profile">
+            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="user-photo">
+          </div>
+          <% }else{ %>
+            <div class="profile">
+              <button onclick="window.location.href='/login'" class="btn">Login</button>
+            </div>
+            <%}%>
+      </div>
+      <form name="test" action="/wallet" method="POST">
+        <div class="box">
+        <form>
+          <span class="text-center">wallet</span>
+        <div class="input-container">
+          <label for="id">id:</label><br>
+          <input type="text" id="id" name="id"><br>		
+        </div>
+        <div class="input-container">		
+          <label for="em">Email:</label><br>
+          <input type="text" id="em" name="em">
+        </div>
+          <div class="input-container">
+          <label for="fam">amount:</label><br>
+          <input type="text" id="fam" name="fam">
+        </div>
+          <input type="submit" class= "btn">
+        </form>	
+      </div>
+        </form>
+    </div>
+    </div>
+  </div>
+
+  <script src="/home.js"></script>
+
+  <%- include("partials/footer") %>

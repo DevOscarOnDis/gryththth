@@ -1,0 +1,47 @@
+<body>
+  <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Cairo';font-size: 22px;
+}
+  section {
+    font-family: 'Cairo';font-size: 22px;
+}
+  form {
+    font-family: 'Cairo';font-size: 22px;
+}
+</style>
+    <%- include('partial/head.ejs'); -%>
+      <div class="content active">
+        <div class="top-navbar">
+          <div class="bx bx-menu ghost" id="menu-icon"></div>
+          <img src="https://cdn.discordapp.com/attachments/992022603684380682/994250244776800346/unknown.png" alt="" width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd" class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+          
+            <div class="profile">
+              <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="user-photo">
+            </div>
+            
+        </div>
+        <form>
+            <form action="/setting" method="post">
+                <div class="box">
+                    <form>
+                        <span class="text-center">تستطيع شحن حسابك من خلال</select></span>
+                        <a href="https://discord.gg/rovastore" class="button-85 block">كريديت</a>
+                        <br>
+                        <a href="/cash-in" class="button-85 block">فودافون كاش</a>
+                </form>	
+                </div>
+            </form>
+        </form>
+      </div>
+    </div>
+  
+  
+    <script src="/home.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  
+  
+  </div></body>

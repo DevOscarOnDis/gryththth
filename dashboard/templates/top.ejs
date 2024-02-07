@@ -1,0 +1,211 @@
+<%- include('partial/head.ejs'); -%>
+<title>top</title>
+<meta content="Embed Title" property="og:title" />
+<meta content="Site Description" property="og:description" />
+<meta content="https://embed.com/this-is-the-site-url" property="og:url" />
+<meta content="https://embed.com/embedimage.png" property="og:image" />
+<meta content="#43B581" data-react-helmet="true" name="theme-color" />
+<meta name="twitter:card" content="summary_large_image">
+<div class="main">
+    <div class="content active">
+        <div class="top-navbar">
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <img src="https://media.discordapp.net/attachments/1006216874683535440/1022137233089761290/PicsArt_09-06-08.48.34.png?width=664&height=664" alt="" width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd" class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+            <div class="profile">
+                <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" alt="">
+            </div>
+        </div>
+        <form action="/top" method="post">
+            <%- top %>
+        </form>
+    </div>
+    </div>
+</div>
+
+<script>
+  var x = document.querySelectorAll(".user-name"); 
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    for(let i = 0; i < x.length; i++){
+      var m = x[i].innerHTML
+      if(m.length > 3){
+        x[i].innerHTML = `${m.slice(0,3)}..`;
+        
+      }
+    }
+}
+</script>
+<style>
+    body.dark .compose-box .compose-content form svg {
+    align-self: center;
+    font-size: 19px;
+    margin-right: 14px;
+    color: #009688;
+    font-weight: 600;
+}
+svg {
+    align-self: center;
+    font-size: 19px;
+    margin-right: 0px;
+    color: #009688;
+    font-weight: 600;
+    margin-left: 15px;
+}
+.form-control {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.button-26 {
+  appearance: button;
+  background-color: #1652F0;
+  border: 1px solid #1652F0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 12px 16px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.button-26:disabled {
+  opacity: .5;
+}
+
+.button-26:focus {
+  outline: 0;
+}
+.pos {
+    align-self: center;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 10px;
+    height: 2.8rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5865f250;
+    margin-bottom: 18px;
+    color: white;
+}
+.button-26:hover {
+  background-color: #0A46E4;
+  border-color: #0A46E4;
+}
+
+.button-26:active {
+  background-color: #0039D7;
+  border-color: #0039D7;
+}
+.first {
+  background-color: #202225;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 35px;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    border: 2px solid purple;
+}
+.contentf {
+    background-color: #21262e;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 35px;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+  form {
+    padding: 16px;
+  }
+.user-avatar img {
+    /*
+    border-radius: 100px;
+    width: 5rem;
+    display: inline-flex;
+    */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all .3s;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.user-avatar {
+  display: flex;
+    grid-gap: 5px;
+    gap: 5px;
+}
+.user-name {
+    /*
+    display: inline-flex;
+    font-size: large;
+    color: white;
+    margin: auto;
+    unicode-bidi: -moz-plaintext;
+
+    */
+    display: flex;
+    text-align: left;
+    margin: auto;
+    unicode-bidi: plaintext;
+    color: white;
+    font-size: large;
+    grid-gap: 5px;
+    gap: 5px;
+}
+.user-money {
+    color: wheat;
+    font-size: large;
+    position: relative;
+    transition: all .3s;
+    text-align: center;
+  display: flex;
+    grid-gap: 5px;
+    gap: 5px;
+}
+.crown {
+    transform: rotate(-20deg);
+    position: absolute;
+    width: 30px;
+    top: 1px;
+    left: 7px;
+    transition: all .5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.user-money img {
+    margin: 0 9px;
+    width: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style>

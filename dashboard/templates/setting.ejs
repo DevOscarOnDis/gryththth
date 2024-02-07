@@ -1,0 +1,39 @@
+.<body>
+    <%- include('partial/head.ejs'); -%>
+      <div class="content active">
+        <div class="top-navbar">
+          <div class="bx bx-menu ghost" id="menu-icon"></div>
+          <img src="https://cdn.discordapp.com/attachments/992022603684380682/994250244776800346/unknown.png" alt="" width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd" class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+          
+            <div class="profile">
+              <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="user-photo">
+            </div>
+            
+        </div>
+        <form>
+            <form action="/setting" method="post">
+                <div class="box">
+                    <form>
+                        <span class="text-center">select</select></span>
+                        <a href="/setting/add" class="button-85 block">Add_Product</a>
+                        <br>
+                        <a href="/setting/delete" class="button-85 block">delete_product</a>
+                        <br>
+                        <a href="/setting/stock-add" class="button-85 block">add_stock</a>
+                        <br>
+                        <a href="/setting/delete-stock" class="button-85 block">Delete Stock</a>
+                </form>	
+                </div>
+            </form>
+        </form>
+      </div>
+    </div>
+  
+  
+    <script src="/home.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  
+  
+  </div></body>

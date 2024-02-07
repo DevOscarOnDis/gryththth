@@ -1,0 +1,76 @@
+<html>
+
+<head>  <meta name="description" content="rova store for shopping">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Home
+  </title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="main">
+    <%- include("partial/head.ejs") %>
+    <div class="content active">
+      <div class="top-navbar">
+        <div class="bx bx-menu ghost" id="menu-icon"></div>
+        <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+          class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+        <% if(user) { %>
+          <div class="profile">
+            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="user-photo">
+          </div>
+          <% }else{ %>
+            <div class="profile">
+              <button onclick="window.location.href='/verifiy-user'" class="btn">Login</button>
+            </div>
+            <%}%>
+      </div>
+      <form>
+        <div class="container">
+          <div class="iphone">
+            <div class="header">
+              <div class="header-summary">
+                <% if(user) { %>
+                  <div class="summary-text">
+                    My Balance
+                  </div>
+                  <div class="summary-balance">
+                    $ <%= money.money %>
+                  </div>
+              </div>
+              <div class="user-profile">
+                <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="user-photo">
+              </div>
+              <% }else{ %>
+                <div class="summary-text">
+                  You have to login first
+                </div>
+                <% }; %>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="/home.js">
+    let inp = document.querySelector(".form-control")
+
+inp.onclick = function () {
+    window.copy(inp.value)
+  console.log(inp.value)
+}
+  </script>
+  <%- include("partials/footer") %>
+
+    <style>
+      body {
+        height: 100vh;
+      }
+    </style>

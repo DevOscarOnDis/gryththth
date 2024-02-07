@@ -1,0 +1,51 @@
+<%- include('partial/head.ejs'); -%>
+<title>invite</title>
+<meta content="Embed Title" property="og:title" />
+<meta content="Site Description" property="og:description" />
+<meta content="https://embed.com/this-is-the-site-url" property="og:url" />
+<meta content="https://embed.com/embedimage.png" property="og:image" />
+<meta content="#43B581" data-react-helmet="true" name="theme-color" />
+<meta name="twitter:card" content="summary_large_image">
+<div class="main">
+    <div class="content active">
+        <div class="top-navbar">
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <img src="https://media.discordapp.net/attachments/1006216874683535440/1022137233089761290/PicsArt_09-06-08.48.34.png?width=664&height=664" alt="" width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd" class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+            <div class="profile">
+                <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" alt="">
+            </div>
+        </div>
+        <form action="/invite" method="post">
+            <div class="box">
+                <form>
+                    <span class="text-center">INvite
+                    <img class="ddd" src="https://cdn.discordapp.com/avatars/<%= username.id %>/<%= username.avatar %>.png" style="color: white;border-radius: 50px;/* padding: 15px; */margin-left: 308px;display: flex;overflow: hidden;padding: initial;">
+            <div class="name"><%= username.username %></div>        </span>
+                <div class="input-container">		
+                    <div class="wow"> this member invited you </div>
+                  
+                </div>
+                    <button type="submit" class="btn" value="<%= id %>" name="id">submit</button>
+            </form>	
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+<style>
+    .wow {
+        font-size: 30px;
+        color: red;
+    }
+  .name {
+    font-size: 35px;
+    color: blue;
+    padding: revert;
+    margin-left: -290px;
+    margin-top: -85px;
+  }
+  .btn {
+        margin-left: 176px;
+    }
+</style>

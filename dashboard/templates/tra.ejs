@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Transfer
+  </title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <button class="up" id="up">UP</button>
+
+  <div class="main">
+    <%- include('partial/head.ejs'); -%>
+    <div class="content active">
+      <div class="top-navbar">
+        <div class="bx bx-menu ghost" id="menu-icon"></div>
+        <img src="https://cdn.discordapp.com/attachments/992022603684380682/994250244776800346/unknown.png" alt=""
+          width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd"
+          class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+        <% if(user) { %>
+          <div class="profile">
+            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="user-photo">
+          </div>
+          <% }else{ %>
+            <div class="profile">
+              <button onclick="window.location.href='/login'" class="btn">Login</button>
+            </div>
+            <%}%>
+      </div>
+        <form action="/transfer" method="post">
+            <div class="box">
+                <form>
+                  <span class="text-center">Transfer</span>
+                  <div class="input-container">
+                  <input type="text" required="" id="id" name="id"/>
+                  <label>id:</label>		
+              </div>
+                  <div class="input-container">		
+                    <input type="mail" required="" name= "fam" id= "fam"/>
+                    <label>amount:</label>
+                </div>
+                    <button type="submit" class="btn">submit</button>
+            </form>
+            </div>
+        </form>
+    </div>
+    </div>
+  </div>
+
+  <script src="/home.js"></script>
+
+  <%- include("partials/footer") %>

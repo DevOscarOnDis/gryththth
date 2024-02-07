@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <meta name="description" content="rova store for shoping">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>
+        Verifiy
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include("partial/head.ejs") %>
+            <div class="content">
+                <div class="top-navbar">
+                    <div class="bx bx-menu ghost" id="menu-icon"></div>
+                    <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+                        class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle swsti">
+                    <% if(user) { %>
+                        <div class="profile">
+                            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png"
+                                class="user-photo">
+                        </div>
+                        <% }else{ %>
+                            <div class="profile">
+<!--                                 <button onclick="window.location.href='/login'" class="btn">Login</button> -->
+                            </div>
+                            <%}%>
+                </div>
+
+                <div class="v">
+                      <form action="/verifiy-user" method="POST" id="form">
+      <div class="g-recaptcha" data-sitekey="6Lf-Y1ElAAAAAPf950yJPhDsofHcSsG_kXk0HNST"></div>
+
+      <script>
+        document.getElementById('form').addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const captcha = document.querySelector('#g-recaptcha-response').value;
+          if (captcha) {
+            window.location.href = "/login"
+          } else {
+            window.location.href = "/verifiy-user"
+          }
+    
+        })
+
+
+      </script>
+      
+      <br/>
+      <input type="submit" value="Login">
+    </form>
+                </div>
+
+            </div>
+    </div>
+    <%- include("partials/footer") %>
+        <style>
+
+          .g-recaptcha {
+            display: flex;
+    justify-content: flex-start;
+    align-items: center;
+          }
+
+          .v form {
+            width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+          }
+
+          .v form input {
+            width: 300px;
+    height: 40px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all .5s ease;
+    background: lime;
+}
+                    .v form input:hover {
+
+    background: green;
+}
+
+                     .side-navbar {
+            display: none !important;
+           }
+
+           #menu-icon {
+            display: none !important;
+           }
+
+          .content {
+            width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+          .swsti {
+            display: none !important;
+          }
+        </style>
+</body>
+
+</html>

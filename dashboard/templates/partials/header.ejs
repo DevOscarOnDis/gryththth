@@ -1,0 +1,99 @@
+ 
+<html dir="rtl" lang="ar">
+<head>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+ 
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/now-ui-kit.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script> -->
+  <script src="/now-ui-kit.min.js"> </script>
+ 
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-transparent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      arova-controls="navbarSupportedContent" arova-expanded="false" arova-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item nav-item1">
+          <a class="nav-link" href="/daily" style="margin-left: 10px;">الهدية اليوميه</a>
+        </li>
+        <li class="nav-item nav-item1">
+          <a class="nav-link" href="/wallet" style="margin-left: 10px;">محفظه جديده</a>
+        </li>
+        <% if(admin) { %> 
+        <li class="nav-item nav-item1">
+       
+          <a class="nav-link" href="/admin" style="margin-left: 10px;">الادمن</a>
+        </li>
+
+<% }; %>
+
+        <li class="nav-item active nav-item1">
+          <a class="nav-link" href="/" style="margin-left: 10px;">الرئيسيه</a>
+        </li>
+        
+            <li class="nav-item">
+              <img
+                src="https://cdn.discordapp.com/attachments/992022603684380682/994250244776800346/unknown.png"
+                alt="" width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd"
+                class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+            </li>
+      </ul>
+      <% if(!user){ %>
+        <button class="mr-auto btn btn-outline-secondary my-2 my-sm-0 btn-round btn-sm"><a href="/login">تسجيل الدخول</a></button>
+        <% }else{ %>
+          <div class="dropdown3 mr-auto d" data-dropdown>
+            <% if(user.username.length > 30) { %>
+              <button class="my-2 my-sm-0 btn-sm no-bg link link3" data-dropdown-button id="hi1">
+                <%= user.username.substring(0,30) %>... <i class="arrow"></i>
+              </button>
+              <% }else{ %>
+                <button class="my-2 my-sm-0 btn-sm no-bg link link3" data-dropdown-button id="hi1">
+                  <%= user.username %> <i class="arrow"></i>
+                </button>
+                <% } %>
+                  <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" alt="Avatar"
+                    style="margin-right: 10px !important;" id="Mavatar">
+                  <% } %>
+
+                    <button class="link" data-dropdown-button style="display: none;"></button>
+                    <div class="dropdown-menu3">
+                      <div>
+                        <div class="dropdown-heading">
+                          <p class="black">
+                            your balance is <span class="text-primary"><i class="fas fa-coins"></i> <%= money.money %></span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+          </div>
+  </nav>

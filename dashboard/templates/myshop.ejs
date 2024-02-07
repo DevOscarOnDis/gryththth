@@ -1,0 +1,342 @@
+<html>
+
+<head>
+    <meta name="description" content="rova store for shoping">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Shops
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include("partial/head.ejs") %>
+        <div class="content">
+                <div class="top-navbar">
+                    <div class="bx bx-menu ghost" id="menu-icon"></div>
+                    <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+                        class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+                    <% if(user) { %>
+                        <div class="profile">
+                            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="user-photo">
+                        </div>
+                        <% }else{ %>
+                            <div class="profile">
+                                <button onclick="window.location.href='/login'" class="btn">Login</button>
+                            </div>
+                            <%}%>
+                </div>
+                <div class="choose">
+                    <div class="asd">
+                        <div class="showShops">
+                        <div class="icondiv">
+                            <ion-icon name="people-outline"></ion-icon>
+                            <span>Users Shops</span>
+                        </div>
+                        <div class="showing">
+                            <a href="/shops/all">Available Shops</a>
+                        </div>
+                        </div>
+                        <div class="createOne">
+                        <div class="icondiv">
+                            <ion-icon name="cart-outline"></ion-icon>
+                                                      <% if (order.length == 0) { %>
+                                                            <% if (shop === null) { %>
+                                                              <span class="ops">Buy Shop, Start Sell For 3$</span>
+                                                            <% } else { %> 
+                                                          <span class="ops">View Your Shop</span>
+                                                              <% } %>
+                                                      <% } else { %>
+                                                        <% if (shop === null) { %>
+                                                          <span class="ops">Create Your Own Shop</span>
+                                                        <% } else { %>
+                                                          <span class="ops">View Your Shop</span>
+                                                        <% } %>
+                                                      <% } %>
+                        </div>
+                        <div class="showing">
+                            <% if (order.length == 0) { %>
+                              <% if (shop===null) { %>
+                                <form action="" method="post">
+                                  <button type="submit" name="buyShop" value="buyShop" class="ssssasd">Buy</button>
+                                </form>
+                              <% } else { %>
+                                    <a href="/shops/my">Show</a>
+                                
+                                <% } %>
+                            <% } else { %>
+                                <% if (shop === null) { %>
+                                    <a href="/shops/create">Create Shop</a>
+                                <% } else { %>
+                                    <a href="/shops/my">Show</a>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="productsasd">
+
+                     <% products.forEach(element => { %>
+
+                      <% let thisShop = shops.filter((e) => e.id === element.ShopID); %>
+
+                        <div class="container">
+                            <div class="card">
+                                <div class="imgBx">
+                                    <img
+                                        src="<%= element.img %>">
+                                </div>
+                                <div class="contentBx">
+                                    <h2><%= element.name %></h2>
+                                    <h2><%= element.price %>$</h2>
+
+                                    <a href="/shops/all/<%= thisShop[0].name %>">
+                                      <div class="shopDiv">
+                                      <div class="shopImg">
+                                        <img src="<%= thisShop[0].logo  %>" alt="404">
+                                      </div>
+                                      <div class="shopName">
+                                        <input type="hidden" id="<%= thisShop[0].name %>">
+                                        <span>
+                                          <% let str = thisShop[0].name; %>
+                                          <% if (str.length > 16) {  %>
+                                            <%= str.slice(0, -str.length + 10) + "..."  %>
+                                          <% } else { %>
+                                            <%= str  %>
+                                          <% } %>
+                                        </span>
+                                      </div>
+                                      </div>
+                                    </a>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="eID" value="<%= element._id  %>">
+                                        <input type="hidden" name="sID" value="<%= element.ShopID %>">
+                                        <% if (user.id !== element.ShopID) { %>
+                                        <button type="submit" class="button-85" value="buying" name="buy">buy</button>
+                                        <% } %>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <% }); %>
+
+
+
+
+
+                    </div>
+                </div>
+        </div>
+    </div>
+    <%- include("partials/footer") %>
+        <style>
+            body {
+                height: 100vh;
+            }
+
+            .container{
+    position: relative;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    display: inline-table;
+    margin-top: 2rem;
+}
+
+.container .card{
+  position: relative;
+  width: 320px;
+  height: 450px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #9bdc28;
+  clip-path: circle(150px at 80% 20%);
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before{
+  clip-path: circle(300px at 80% -20%);
+}
+
+.container .card:after{
+  content: 'rova';
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255,255,25,0.05)
+}
+
+.container .card .imgBx{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.container .card:hover .imgBx{
+  top: 0%;
+  transform: translateY(0%);
+    
+}
+
+.container .card:hover .shopDiv {
+  margin: 0;
+}
+
+.container .card .imgBx img {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 11rem;
+    position: inherit;
+    margin: -25px 0 0 0;
+}
+
+.container .card .contentBx{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.container .card:hover .contentBx{
+  height: 210px;
+}
+
+.container .card .contentBx h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 0 0 0 -57px;
+}
+
+.container .card .contentBx .size, .container .card .contentBx .color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.container .card:hover .contentBx .size{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.container .card:hover .contentBx .color{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
+.container .card .contentBx .size h3, .container .card .contentBx .color h3{
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.container .card .contentBx .size span{
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: inline-block;
+  color: #111;
+  background: #fff;
+  margin: 0 5px;
+  transition: 0.5s;
+  color: #111;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container .card .contentBx .size span:hover{
+  background: #9bdc28;
+}
+
+.container .card .contentBx .color span{
+  width: 20px;
+  height: 20px;
+  background: #ff0;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.container .card .contentBx .color span:nth-child(2){
+  background: #9bdc28;
+}
+
+.container .card .contentBx .color span:nth-child(3){
+  background: #03a9f4;
+}
+
+.container .card .contentBx .color span:nth-child(4){
+  background: #e91e63;
+}
+
+.container .card .contentBx button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #eee;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+    margin-right: 3rem;
+    margin-top: 80px;
+}
+
+.container .card:hover .contentBx button{
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+  bottom: 0px;
+}
+  @media screen and (max-width: 400px) {
+  .container .card {
+    max-width: 15rem;
+    margin: 0px;/* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+        </style>
+</body>
+</html>

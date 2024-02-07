@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <meta name="description" content="rova store for shoping">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Shops
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include("partial/head.ejs") %>
+            <div class="content">
+                <div class="top-navbar">
+                    <div class="bx bx-menu ghost" id="menu-icon"></div>
+                    <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+                        class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+                    <% if(user) { %>
+                        <div class="profile">
+                            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png"
+                                class="user-photo">
+                        </div>
+                        <% }else{ %>
+                            <div class="profile">
+                                <button onclick="window.location.href='/login'" class="btn">Login</button>
+                            </div>
+                            <%}%>
+                </div>
+
+                <div class="productis">
+                    <div class="nav-h">
+                        <a href="products/add">Add Product</a>
+                    </div>
+                    <div class="prosucts">
+                        <div class="head">
+                            <h1>Products</h1>
+                        </div>
+                        <div class="prducts">
+
+                            <% if (products.length > 0) { %>
+
+                            <% products.forEach(element => { %>
+                                
+                           
+
+
+
+<div class="productOne">
+    <div class="imger">
+        <img src="<%= element.img  %>"
+            alt="404">
+    </div>
+    <div class="namer">
+        <span><%= element.name %></span>
+    </div>
+    <div class="descer">
+        <p><%= element.desc %></p>
+    </div>
+    <div class="price">
+        <span><%= element.price %>$</span>
+        <form action="" method="post" class="del">
+            <input type="hidden" name="pid" value="<%= element.id %>">
+            <% if (element.isShow === true) { %>
+                <span class="act">Active...</span>
+                <button type="submit" class="uio">Delete</button>
+            <% } else { %>
+                <span class="pen">Pending...</span>
+            <% } %>
+            
+            
+        </form>
+    </div>
+</div>
+                             
+ <% }); %>
+ <% } else { %>
+    <div class="empty"><span>No Products, Add One</span></div>
+<% } %>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    <%- include("partials/footer") %>
+        <style>
+        </style>
+</body>
+
+</html>

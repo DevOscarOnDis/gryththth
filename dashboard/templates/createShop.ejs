@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta name="description" content="rova store for shoping">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Shops
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include("partial/head.ejs") %>
+            <div class="content">
+                <div class="top-navbar">
+                    <div class="bx bx-menu ghost" id="menu-icon"></div>
+                    <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+                        class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+                    <% if(user) { %>
+                        <div class="profile">
+                            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png"
+                                class="user-photo">
+                        </div>
+                        <% }else{ %>
+                            <div class="profile">
+                                <button onclick="window.location.href='/login'" class="btn">Login</button>
+                            </div>
+                            <%}%>
+                </div>
+                <div class="forma">
+                    <form action="" method="post">
+                        <div class="holder">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="" class="input-style" placeholder="Shop Name..." required>
+                        </div>
+                        <div class="holder">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="" class="input-style" placeholder="Shop Email..." required>
+                        </div>
+                        <div class="holder">
+                            <label for="logo">Logo</label>
+                            <input type="text" name="logo" id="" class="input-style" placeholder="Logo Image Link..." required>
+                        </div>
+                        <div class="holder">
+                            <label for="banner">Banner</label>
+                            <input type="text" name="banner" id="" class="input-style" placeholder="Banner Image Link..." required>
+                        </div>
+                                                <div class="holder">
+                                                    <label for="banner">Shop Description</label>
+                                                    <textarea name="desc" id="" cols="30" rows="10" class="testare" placeholder="Shop Description..." required></textarea>
+                                                </div>
+                        <button type="submit">Create Shop</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+    <%- include("partials/footer") %>
+        <style>
+            body {
+                height: 100vh;
+            }
+        </style>
+</body>
+
+</html>

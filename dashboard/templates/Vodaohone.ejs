@@ -1,0 +1,273 @@
+<%- include('partial/head.ejs'); -%>
+<link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Cairo';font-size: 22px;
+}
+  section {
+    font-family: 'Cairo';font-size: 22px;
+}
+  form {
+    font-family: 'Cairo';font-size: 22px;
+}
+</style>
+<title>invite</title>
+<meta content="Embed Title" property="og:title" />
+  <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+<meta content="Site Description" property="og:description" />
+<meta content="https://embed.com/this-is-the-site-url" property="og:url" />
+<meta content="https://embed.com/embedimage.png" property="og:image" />
+<meta content="#43B581" data-react-helmet="true" name="theme-color" />
+<meta name="twitter:card" content="summary_large_image">
+<div class="main">
+    <div class="content active">
+        <div class="top-navbar">
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <img src="https://media.discordapp.net/attachments/1006216874683535440/1022137233089761290/PicsArt_09-06-08.48.34.png?width=664&height=664" alt="" width="30" height="30" style="border-radius: 50%; box-shadow: 0 5px 30px 0 #01a6dd" class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+            <div class="profile">
+                <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" alt="">
+            </div>
+        </div>
+        <form action="/cash-in" method="post" enctype="multipart/form-data">
+          <center><img src="https://play-lh.googleusercontent.com/73UfRHOJukQ8x-WjF4Gdk1Xfccm5fxcGRmBkEWlnE4eG8WvKnmeHxVNUSLyC5Gw0hg" style="
+    width: 10rem;
+    border-radius: 100px;
+">  <div style="
+    color: white;
+    font-weight: bolder;
+    font-size: x-large;
+    text-shadow: 4px 4px 20px wheat;
+    margin-top: 30px;
+">شحن رصيد في الموقع من خلال فودافون كاش
+</div>
+</center>
+          <div style="
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-bottom: 23rem solid red;
+    border-left: 8rem solid transparent;
+    z-index: 1;
+" class="fd"></div>
+<div style="
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-bottom: 23rem solid white;
+    border-left: 9rem solid transparent;
+" class="fd"></div>
+                          <div class="box">
+                <form>
+                    <span class="text-center fds"> <button class="button-64" role="button"><span class="text">رقم الهاتف</span></button> </span>
+                            <p>
+                              
+    <label for="phone" style="
+    color: red;
+    float: right;
+    text-shadow: 0px 0px 50px #f00;
+    font-size: large;
+      font-weight: bold;
+">رقمك فودافون</label>
+                              <br>
+	<span class="input">
+    
+		<input type="text" name="phone" placeholder="">
+		<span></span>	
+	</span>
+</p>
+                  <p>
+    <label for="phone" style="
+    color: red;
+    float: right;
+    text-shadow: 0px 0px 50px #f00;
+    font-size: large;
+      font-weight: bold;
+">المبلغ الذي قمت بارساله</label>                                               <br>
+	<span class="input">
+    
+		<input type="text" name="price" placeholder="">
+		<span></span>	
+	</span>
+</p>
+                  <p>
+    <label for="phone" style="
+    color: red;
+    float: right;
+    text-shadow: 0px 0px 50px #f00;
+    font-size: large;
+      font-weight: bold;
+">رابط صوره الدليل</label>                                               <br>
+	<span class="input">
+    
+		<input type="file" name="proof" placeholder="">
+		<span></span>	
+	</span>
+</p>
+                    <button type="submit" class="" style="
+    padding: 4px 35px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 4px red;
+    border: 0px;
+    color: red;
+    font-size: large;
+    margin-top: 2rem;
+">طلب شراء</button>
+            </form>	
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+<style>
+  .input {
+	 position: relative;
+	 font-size: 1.5em;
+	 background: linear-gradient(21deg, red, #f00);
+	 padding: 3px;
+	 display: inline-block;
+	 border-radius: 9999em;
+}
+ .input *:not(span) {
+	 position: relative;
+	 display: inherit;
+	 border-radius: inherit;
+	 margin: 0;
+	 border: none;
+	 outline: none;
+	 padding: 10px 35px;
+	 z-index: 1;
+}
+ .input *:not(span):focus + span {
+	 opacity: 1;
+	 transform: scale(1);
+}
+ .input span {
+	 transform: scale(0.993, 0.94);
+	 transition: transform 0.5s, opacity 0.25s;
+	 opacity: 0;
+	 position: absolute;
+	 z-index: 0;
+	 margin: 4px;
+	 left: 0;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 border-radius: inherit;
+	 pointer-events: none;
+	 box-shadow: inset 0 0 0 3px #f00, 0 0 0 4px #f00, 3px -3px 30px #f00, -3px 3px 30px #f00;
+}
+ html {
+	 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Aroval, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	 line-height: 1.5;
+	 font-size: 1em;
+}
+ body {
+	 text-align: center;
+	 display: flex;
+	 justify-content: center;
+}
+ html, body {
+	 height: 100%;
+}
+ input {
+	 font-family: inherit;
+	 line-height: inherit;
+	 color: #2e3750;
+	 min-width: 12em;
+}
+ ::placeholder {
+	 color: #f00;
+}
+ .box {
+   margin-top: 8rem;
+   z-index: 2;
+ }
+  body {
+    font-family: 'Cairo';
+}
+  @media screen and (max-width: 400px) {
+    .box {
+    align-items: center;
+    display: grid;
+    width: auto;
+    /* margin: auto; */
+    background-color: rgba(0, 0, 0, 0.89);
+    padding: 70px 100px;
+    position: relative;
+    border-radius: 25px;
+    left: auto;
+    top: auto;
+    transform: translate(0, 0);
+    justify-items: center;
+    justify-content: center;
+}
+  }
+
+
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+  .fds {
+        justify-content: center;
+    display: flex;
+  }
+</style>
+<script>
+  const buton = document.querySelector(".button-64")
+  const fds = document.querySelector(".fds")
+  
+  buton.onclick = function () {
+    fds.innerHTML = "01019956537"
+  }
+</script>

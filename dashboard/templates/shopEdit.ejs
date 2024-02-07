@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta name="description" content="rova store for shoping">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Shops
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include("partial/head.ejs") %>
+            <div class="content">
+                <div class="top-navbar">
+                    <div class="bx bx-menu ghost" id="menu-icon"></div>
+                    <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+                        class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+                    <% if(user) { %>
+                        <div class="profile">
+                            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png"
+                                class="user-photo">
+                        </div>
+                        <% }else{ %>
+                            <div class="profile">
+                                <button onclick="window.location.href='/login'" class="btn">Login</button>
+                            </div>
+                            <%}%>
+                </div>
+
+                <div class="productAddForm ">
+                    <h1>Edit Shop</h1>
+                    <form action="" method="post" class="ios">
+                                            
+                                            <form action="" method="post">
+                                                <div class="holder">
+                                                    <label for="s_name">Shop Name</label>
+                                                    <input type="text" name="s_name" id="" class="input-style" placeholder="Edit Shop Name..." required value="<%= shop.name %>">
+                                                </div>
+                                                <div class="holder">
+                                                    <label for="s_Logo">Shop Logo</label>
+                                                    <input type="text" name="s_logo" id="" class="input-style" placeholder="Edit Shop Logo..." required value="<%= shop.logo %>">
+                                                </div>
+                                                <div class="holder">
+                                                    <label for="s_banner">Shop Banner</label>
+                                                    <input type="text" name="s_banner" id="" class="input-style" placeholder="Edit Shop Banner..." required value="<%= shop.banner %>">
+                                                </div>
+                                                <button type="submit">Save</button>
+                    </form>
+                </div>
+
+            </div>
+    </div>
+    <%- include("partials/footer") %>
+        <style>
+        </style>
+</body>
+
+</html>

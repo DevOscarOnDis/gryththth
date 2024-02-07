@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <meta name="description" content="rova store for shoping">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Shops
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include("partial/head.ejs") %>
+            <div class="content">
+                <div class="top-navbar">
+                    <div class="bx bx-menu ghost" id="menu-icon"></div>
+                    <img src="https://cdn.discordapp.com/attachments/982364884614389800/1116783390537039882/download_1.webp" alt=""
+          width="50" height="30" style="border-radius: 30%; box-shadow: 0 0px 00px 0 #01a6dd"
+                        class="d-inline-block align-text-top position-absolute top-50 start-50 translate-middle">
+                    <% if(user) { %>
+                        <div class="profile">
+                            <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png"
+                                class="user-photo">
+                        </div>
+                        <% }else{ %>
+                            <div class="profile">
+                                <button onclick="window.location.href='/login'" class="btn">Login</button>
+                            </div>
+                            <%}%>
+                </div>
+                <div class="all-shops">
+                    <div class="search">
+                        <form action="" method="post">
+                            <input type="text" id="search111" name="search" placeholder="Search...">
+                        </form>
+                    </div>
+                    <div class="shower">
+
+                        <% if (shops.length > 0) { %>
+
+
+                        <% shops.forEach(shop => { %>
+
+                        <div class="counter">
+                          <style>
+                            .counter {
+                                height: max-content;
+                            }
+                          </style>
+                            <div class="img-1">
+                                <img src="<%= shop.logo %>" alt="404">
+                            </div>
+                            <div class="namy">
+                                <span><%= shop.name %> Shop</span>
+                            </div>
+                            <div class="desc uu">
+                               <p><%= shop.desc %></p>
+                            </div>
+                            <div class="viewer">
+                                <a href="/shops/all/<%= shop.name %>">View Shop --></a>
+                            </div>
+                        </div>
+
+                        <% }); %>
+                        <% } else { %>
+                            <div class="empty"><span>No Shops Available</span></div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <%- include("partials/footer") %>
+        <style>
+
+        </style>
+</body>
+
+</html>
